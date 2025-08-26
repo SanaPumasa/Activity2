@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 
 from accounts.forms import TweetForm
 from .models import Tweet
@@ -10,13 +10,13 @@ from .models import Tweet
 def home(request):
     return render(request, "home.html")
 
-# def tweets_detail_view(request, id=1):
-#     obj = Tweet.objects.get(id=id)
-#     print(obj)
-#     context = {
-#         'object': obj,
-#     }
-#     return render(request, 'detail_view.html', context)
+class TweetDetailView(DetailView):
+    model = Tweet
+    template_name = "detail_view.html"
+    context_object_name = "tweet"
+
+    def get_object(self, queryset=Tweet.objects.all()):
+        return Tweet.objects.get(pk=self.kwargs['pk'])
 
 # def tweets_list_view(request):
 #     qs = Tweet.objects.all()

@@ -19,10 +19,6 @@
             <strong>Posted:</strong>{{ tweet.created_at }}<br>
             <strong>Updated:</strong>{{ tweet.updated_at }}
         </p>
-{#        <div>#}
-{#            <p>{{ tweet.tweet_content }}</p>#}
-{#            <small>{{ tweet.timestamp }}</small>#}
-{#        </div>#}
     {% empty %}
         <p>No tweets have been posted yet.</p>
     {% endfor %}

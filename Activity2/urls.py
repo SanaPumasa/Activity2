@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Tweets.views import home, TweetListView, TweetCreateView
+from Tweets.views import home, TweetListView, TweetCreateView, TweetDetailView
 from accounts.views import register, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    # path('1/', tweets_detail_view, name='tweets_detail_view'),
+    # path('<int:id/', TweetDetailView.as_view(), name='detail_view'),
     path('tweets/', TweetListView.as_view(), name='list_view'),
     path('register/', register, name='register'),
     path('login/', login, name='login'),
