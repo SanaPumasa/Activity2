@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Showcase</title>
+    <!-- Use Tailwind CSS for a clean, modern look -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use the Inter font, which is clean and easy to read */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Set a custom font size for the tweet text to give it more weight */
+        .tweet-text {
+            font-size: 1.125rem; /* Equivalent to text-lg in Tailwind */
+            line-height: 1.625;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main container for the tweet card -->
+    <div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+        <!-- Tweet header: user info -->
+        <div class="flex items-center space-x-4 mb-4">
+            <!-- Profile picture placeholder -->
+            <img class="w-12 h-12 rounded-full ring-2 ring-blue-500" src="https://placehold.co/100x100/3B82F6/ffffff?text=U" alt="Profile Picture">
+            <div class="flex-1">
+                <div class="flex items-center space-x-1">
+                    <!-- User's name -->
+                    <span class="font-bold text-gray-900 text-lg">'user'</span>
+                    <!-- Verified badge icon (using an SVG for simplicity) -->
+{#                    <svg class="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">#}
+{#                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.89-5.91a.75.75 0 001.06 1.06L9 13.94l.89-.89a.75.75 0 001.06 1.06L9.5 15.5l-.35-.35a.75.75 0 00-1.06 0z" clip-rule="evenodd"></path>#}
+{#                    </svg>#}
+                </div>
+                <!-- User's handle -->
+                <span class="text-sm text-gray-500">@'user'</span>
+            </div>
+        </div>
+
+        <!-- The main tweet content -->
+        <p class="tweet-text mb-4">
+            'content'
+        </p>
+
+        <!-- Date and time stamp -->
+        <div class="text-sm text-gray-500">
+            'updated_at' · 'created_at'
+        </div>
+
+    </div>
+
+</body>
+</html>

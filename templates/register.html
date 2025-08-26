@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1>Register Page</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <form method="post">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger">
+                                    {% for error in field.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="mt-4 text-center">
+        <p>Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+    </div>
+</body>
+</html>
