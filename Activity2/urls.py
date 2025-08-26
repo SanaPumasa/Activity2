@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Tweets.views import home, TweetListView, TweetCreateView, TweetDetailView
+from History.models import History
+from History.views import history_list
+from Tweets.views import home, TweetListView, TweetCreateView, HistoryListView
 from accounts.views import register, login
 
 urlpatterns = [
@@ -28,4 +30,5 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login, name='login'),
     path('create/', TweetCreateView.as_view(), name='create'),
+    path('history/', HistoryListView.as_view(), name='history_list'),
 ]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+
+    <h1>History Log</h1>
+
+    {% if all_history %}
+        <ul>
+            {% for history in all_history %}
+                <li>
+                    <strong>User:</strong> {{ history.user.username }}<br>
+                    <strong>Action:</strong> {{ history.summary }}<br>
+                    <strong>Date:</strong> {{ history.date }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No history entries found.</p>
+    {% endif %}
+
+</body>
+</html>

@@ -34,7 +34,7 @@ def login(request):
             user = authenticate(request, username=email, password=password)
 
             if user is not None:
-                return redirect('home')
+                return redirect('list_view')
 
             else:
                 form.add_error(None, "Invalid email or password.")

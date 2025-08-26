@@ -4,6 +4,7 @@ from django.views.generic import ListView, CreateView, DetailView
 
 from accounts.forms import TweetForm
 from .models import Tweet
+from History.models import History
 
 
 # Create your views here.
@@ -41,3 +42,8 @@ class TweetCreateView(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(TweetCreateView, self).form_valid(form)
+
+class HistoryListView(ListView):
+    model = History
+    template_name = "history.html"
+    context_object_name = "all-history"
